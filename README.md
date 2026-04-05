@@ -112,3 +112,4 @@ Weather CLI was coded as my final project for Harvard's CS50’s Introduction to
 
 #### Displaying Weather Forecast Using Imperial System
 ![](https://lh3.googleusercontent.com/pw/AJFCJaX8B1PNZvn_UcU-UWG8LtfcTRGWPgv0As8uDIb3q_oPgrpNOKTmp0P3aMsu1sB0CppL0OFmOPkLilVp9Ajytu4FMo2iX26a1-FzrL3PtTI26kHv9iczxIknRpOnji3Nq5spGaaluETKRpkzSeTwxjMA=w510-h915-s-no)
+  # Lab 6 CI/CD changes
