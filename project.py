@@ -238,7 +238,6 @@ are after? (1 to {len(similar_results)}): "
                     print(Fore.RED)
                     print("Not a valid option. Try again (Y/N): ", end="")
                     print(Style.RESET_ALL)
-                    continue
 
 
 def generate_ascii_art():
@@ -476,8 +475,8 @@ def print_current_response(current_response, units):
     # Convert sunrise and sunset to local time
     sunrise = sunrise + timezone
     sunset = sunset + timezone
-    sunrise = datetime.utcfromtimestamp(sunrise).strftime("%I:%M:%S %p")
-    sunset = datetime.utcfromtimestamp(sunset).strftime("%I:%M:%S %p")
+    sunrise = datetime.fromtimestamp(sunrise).strftime("%I:%M:%S %p")
+    sunset = datetime.fromtimestamp(sunset).strftime("%I:%M:%S %p")
     last_updated = datetime.fromtimestamp(dt).strftime("%I:%M:%S %p")
 
     print(Fore.CYAN, end="")
@@ -571,9 +570,9 @@ def print_forecast_response(forecast_response, units):
     city_name = forecast_response["city"]["name"]
     timezone = int(forecast_response["city"]["timezone"])
     sunrise = forecast_response["city"]["sunrise"] + timezone
-    sunrise = datetime.utcfromtimestamp(sunrise)
+    sunrise = datetime.fromtimestamp(sunrise)
     sunset = forecast_response["city"]["sunset"] + timezone
-    sunset = datetime.utcfromtimestamp(sunset)
+    sunset = datetime.fromtimestamp(sunset)
     date = ""
 
     for forecast in forecast_response["list"]:
@@ -582,13 +581,13 @@ def print_forecast_response(forecast_response, units):
         local_time = timestamp + timezone
 
         forecast_time = (
-            datetime.utcfromtimestamp(local_time).strftime("%I:%M:%S %p")
+            datetime.fromtimestamp(local_time).strftime("%I:%M:%S %p")
         )
 
-        forecast_hour = datetime.utcfromtimestamp(local_time)
+        forecast_hour = datetime.fromtimestamp(local_time)
 
         new_date = (
-            datetime.utcfromtimestamp(local_time).strftime("%A, %d %B %Y")
+            datetime.fromtimestamp(local_time).strftime("%A, %d %B %Y")
         )
 
         timestamp = datetime.fromtimestamp(timestamp)
